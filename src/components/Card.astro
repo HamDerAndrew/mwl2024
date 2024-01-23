@@ -7,12 +7,12 @@ interface Props {
 const { title, body } = Astro.props;
 ---
 
-<li class="link-card shadow-3xl border-black rounded border-solid border">
+<div class="link-card shadow-3xl border-black rounded border-solid border">
 	<div class="p-8">
-		<h2 class="text-3xl font-bold text-center text-white">{title}</h2>
-		<p class=" text-white">{body}</p>
+		<h2 class="text-5xl font-bold text-center text-white mb-7">{title}</h2>
+		<p class="text-xl text-white">{body}</p>
 	</div>
-</li>
+</div>
 
 <style>
 
