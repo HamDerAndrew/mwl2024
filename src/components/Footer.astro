@@ -1,0 +1,28 @@
+---
+import Logo from "../../public/mwlogo3-yellow.png"
+---
+
+<footer class="mwl-background py-16">
+  <div class="container mx-auto flex justify-between">
+    <div class="text-white">
+      <ul>
+        <li class="mb-3"><a href="/services">Services</a></li>
+        <li class="mb-3"><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="w-56">
+      <img src={Logo.src} class="max-w-full h-auto"/>
+      <p class="text-white">&copy; 2024 MWL - CVR 43932292</p>
+    </div>
+    <div class="self-center">
+      <p class="text-white text-3xl">Contact@mwl.nu</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .mwl-background {
+		background: var(--mwl-purple);
+	}
+</style>
