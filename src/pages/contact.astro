@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Layout title="MWL - Your local webagency" isFrontpage={false}>
+  <Hero page="contact" />
+  <main class="text-white container mx-auto py-52">
+    <h1>Wanna talk?</h1>
+  </main>
+</Layout>
+
+<style>
+  .mwl-yellow {
+    color: var(--mwl-yellow-bright);
+  }
+</style>
