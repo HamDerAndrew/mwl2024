@@ -30,7 +30,7 @@ import Rectangleright from "../../public/Rectangle-right.svg";
 		</div>
 		<!--Services -->
 		<div class="py-44 mwl-background">
-			<div class="container mx-auto py-11 px-8">
+			<div id="what-we-do" class="container mx-auto py-11 px-8">
 				<h3 class="text-center text-5xl md:text-7xl font-bold text-white mb-6">What we do</h3>
 				<p class="text-center text-white md:text-3xl text-xl mb-6">In all that we undertake, we stand steadfastly by your side throughout the entire process. 
 					Whether you're seeking to establish your business online with a website, grappling with the growing demands of maintaining an existing one, or facing any other challenge, rest assured, we are here to help you. 
@@ -93,11 +93,17 @@ import Rectangleright from "../../public/Rectangle-right.svg";
 	position: relative;
 }
 
-/* #highlight::after {
-	content:"consultant";
-	display: block;
-	text-align: right;
-} */
+#what-we-do {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+#what-we-do.active {
+  transform: translateY(0);
+  opacity: 1;
+}
 
 .mwl-background {
 	background: var(--mwl-purple);
@@ -122,5 +128,20 @@ import Rectangleright from "../../public/Rectangle-right.svg";
 </style>
 
 <script>
-	
+	const reveal = () => {
+		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
+		
+		if(currentPath === "") {
+			const scrollUpElement = document.getElementById("what-we-do");
+			const windowHeight = window.innerHeight;
+			const elementTop = scrollUpElement.getBoundingClientRect().top;
+			const elementVisible = 150;
+			
+			if (elementTop < windowHeight - elementVisible) {
+				scrollUpElement.classList.add("active");
+			}
+		}
+	}
+	window.addEventListener("scroll", reveal)
+
 </script>
