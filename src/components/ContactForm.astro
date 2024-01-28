@@ -8,20 +8,20 @@
     <form class="flex justify-center">
       <div class="w-full xl:text-3xl">
         <div class="mb-5">
-          <input id="name" type="text" placeholder="Name" class="mwl-background rounded w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 border mwl-border" />
+          <input id="name" type="text" placeholder="Name" class=" bg-transparent border-2 mwl-border rounded w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 " />
         </div>
         <div class="mb-5">
-          <input id="email" type="email" placeholder="Email" class="mwl-background rounded w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 border mwl-border" />
+          <input id="email" type="email" placeholder="Email" class="bg-transparent border-2 mwl-border rounded w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 " />
         </div>
         <div class="mb-5">
-          <textarea id="message" class="mwl-background rounded w-full p-2 md:h-96 placeholder:text-white focus:ring focus:ring-blue-900 border mwl-border" placeholder="Message"></textarea>
+          <textarea id="message" class="bg-transparent border-2 mwl-border rounded w-full p-2 md:h-96 placeholder:text-white focus:ring focus:ring-blue-900 " placeholder="Message"></textarea>
         </div>
-        <button class="w-full py-3 border hover:bg-yellow-400 rounded text-white" role="button" type="submit">Send</button>
+        <button class="w-full py-3 mwl-border border-2 hover:bg-yellow-400 rounded text-white" role="button" type="submit">Send</button>
       </div>
     </form>
   </div>
   <!--Let us talk splash art -->
-  <div class="mwl-background relative md:flex md:justify-center md:items-center md:w-5/12 md:border md:rounded md:overflow-hidden hidden">
+  <div class="bg-transparent border-2 mwl-border relative md:flex md:justify-center md:items-center md:w-5/12 md:rounded md:overflow-hidden hidden">
     <div class="circle circle-top invisible"></div>
     <p class="md:text-6xl text-2xl text-white">Let's Talk!</p>
     <div class="circle circle-bottom invisible"></div>
@@ -31,6 +31,15 @@
 <style>
 .mwl-background {
 	background: var(--mwl-purple);
+}
+
+.mwl-border {
+	border-color: var(--mwl-purple);
+}
+
+button:hover {
+	background-color: var(--mwl-purple);
+	transition: .3s ease-in;
 }
 
 .circle {
