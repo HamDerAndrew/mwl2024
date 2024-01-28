@@ -7,13 +7,24 @@ interface Props {
 const { title, body } = Astro.props;
 ---
 
-<div class="link-card shadow-3xl border-black rounded border-solid border">
+<div class="shadow-3xl border-black rounded border-solid border mwl-link">
 	<div class="p-8">
 		<h2 class="text-5xl font-bold text-center text-white mb-7">{title}</h2>
 		<p class="text-xl text-white">{body}</p>
 	</div>
+	<div class="link-card h-1 bg-yellow-400 w-1/2"></div>
 </div>
 
 <style>
+	.link-card {
+		height: 4px;
+		background-color: var(--mwl-yellow);
+		width: 50%;
+		transition: width .3s ease-out;
+	}
 
+	.mwl-link:hover .link-card{
+		width: 100%;
+		transition: width .3s ease-out;
+	}
 </style>
