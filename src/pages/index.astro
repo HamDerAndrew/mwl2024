@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import RectangleLeft from "../../public/Rectangle-left.svg";
 import Rectangleright from "../../public/Rectangle-right.svg";
-import Logo from "../../public/mwlogo3-yellow.png";
 ---
 
 <Layout title="MWL - Your local webagency" isFrontpage={true}>
@@ -72,19 +71,22 @@ import Logo from "../../public/mwlogo3-yellow.png";
 
 			</div>
 		</div>
+
+		<div class="w-full">
+			<div class="custom-shape-divider-top-1706452744">
+				<svg class="triangle-divider" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+						<path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+				</svg>
+			</div>
+		</div>
+
 		<!--Work together -->
-		<div class="py-72">
+		<div class="pb-72 pt-44">
 			<div class="px-8">
 				<h3 class="text-7xl text-white text-center font-bold mb-4">Wanna work together?</h3>
-				<p class="text-3xl text-white text-center font-bold">We would love to talk with you about how we can make your online experience better?</p>
+				<p class="text-3xl text-white text-center font-bold">We would love to talk with you about how we can make your online experience better</p>
 			</div>
 			<div class="container mx-auto px-8 flex justify-center gap-2 pt-32 relative">
-				<!--Let us talk splash art -->
-				<div class="mwl-background relative md:flex md:justify-center md:items-center md:w-5/12 md:border md:rounded md:overflow-hidden hidden">
-					<div class="circle circle-top invisible"></div>
-					<p class="md:text-6xl text-2xl text-white">Let's Talk!</p>
-					<div class="circle circle-bottom invisible"></div>
-				</div>
 				<!--Contact form -->
 				<div class="w-7/12">
 					<form class="flex justify-center">
@@ -102,6 +104,13 @@ import Logo from "../../public/mwlogo3-yellow.png";
 						</div>
 					</form>
 				</div>
+				<!--Let us talk splash art -->
+				<div class="mwl-background relative md:flex md:justify-center md:items-center md:w-5/12 md:border md:rounded md:overflow-hidden hidden">
+					<div class="circle circle-top invisible"></div>
+					<p class="md:text-6xl text-2xl text-white">Let's Talk!</p>
+					<div class="circle circle-bottom invisible"></div>
+				</div>
+
 			</div>
 		</div>
 	</main>
@@ -136,6 +145,10 @@ import Logo from "../../public/mwlogo3-yellow.png";
 
 .mwl-border {
 	border-color: var(--mwl-white-border);
+}
+
+.triangle-divider {
+	fill: var(--mwl-purple);
 }
 
 .circle {
