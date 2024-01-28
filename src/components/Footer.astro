@@ -6,9 +6,9 @@ import Logo from "../../public/mwlogo3-yellow.png"
   <div class="container mx-auto md:flex-row md:justify-between flex flex-col items-center gap-y-8">
     <div class="text-white">
       <ul>
-        <li class="mb-3"><a href="/services">Services</a></li>
-        <li class="mb-3"><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li class="mb-3"><a href="/services" class="link-style">Services</a></li>
+        <li class="mb-3"><a href="/about" class="link-style">About</a></li>
+        <li><a href="/contact" class="link-style">Contact</a></li>
       </ul>
     </div>
     <div class="w-56">
@@ -21,7 +21,41 @@ import Logo from "../../public/mwlogo3-yellow.png"
   </div>
 </footer>
 
-<style>
+<style> 
+  .link-style {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* .link-style:hover {
+    color: white;
+  } */
+
+  .link-style::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: var(--mwl-yellow);
+    height: 4px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+
+  .link-style:hover::before {
+    right: 0;
+  } 
   .mwl-background {
 		background: var(--mwl-purple);
 	}
