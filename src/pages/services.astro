@@ -7,46 +7,47 @@ import Card from '../components/Card.astro';
 <Layout title="MWL - Your local webagency" isFrontpage={false}>
   <Hero page="services" />
   <main class="text-white container mx-auto py-52">
-    <div class="flex gap-1 max-w-full justify-between flex-wrap">
-      <div class="w-96 rotate-left">
+    <div class="flex xl:gap-9 gap-9 max-w-full xl:justify-between justify-center flex-wrap px-8">
+      <div class="xl:w-96 md:w-80 rotate-left">
         <Card
         title="Websites"
         body="Elevate your online presence with custom websites built on Umbraco. We specialize in user-friendly designs, seamless scalability, and expert content management. Let your digital presence shine with our streamlined and innovative approach to web development."
         />
       </div>
-      <div class="w-96">
+      <div class="xl:w-96 md:w-80">
         <Card
         title="DevOps"
         body="Elevate your digital infrastructure with our comprehensive DevOps and Azure hosting solutions. From seamless deployment to continuous monitoring, we optimize performance and ensure scalability. Let us handle the technicalities so you can concentrate on growing your business."
         />
       </div>
-      <div class="w-96 rotate-right">
+      <div class="xl:w-96 md:w-80 rotate-right">
         <Card
         title="Maintenance"
+        body="Streamline your online presence with our expert website maintenance services. We handle updates, security, and optimization, ensuring your site runs smoothly while you focus on what matters most – your business."
+        />
+      </div>
+      <div class="xl:w-96 md:w-80 rotate-2">
+        <Card
+        title="Accessibility"
+        body="Elevate your online presence with custom websites built on Umbraco. We specialize in user-friendly designs, seamless scalability, and expert content management. Let your digital presence shine with our streamlined and innovative approach to web development."
+        />
+      </div>
+      <div class="xl:w-96 md:w-80">
+        <Card
+        title="Cybersecurity"
+        body="Analysis of your current solution in which we highlight potential vulburabilities."
+        />
+      </div>
+      <div class="xl:w-96 md:w-80 rotate-2">
+        <Card
+        title="Azure consulting"
         body="Streamline your online presence with our expert website maintenance services. We handle updates, security, and optimization, ensuring your site runs smoothly while you focus on what matters most – your business."
         />
       </div>
     </div>
 
     <div class="flex gap-1 max-w-full justify-between flex-wrap mt-11">
-      <div class="w-96 rotate-2">
-        <Card
-        title="Accessibility"
-        body="Elevate your online presence with custom websites built on Umbraco. We specialize in user-friendly designs, seamless scalability, and expert content management. Let your digital presence shine with our streamlined and innovative approach to web development."
-        />
-      </div>
-      <div class="w-96">
-        <Card
-        title="Cybersecurity"
-        body="Analysis of your current solution in which we highlight potential vulburabilities."
-        />
-      </div>
-      <div class="w-96 rotate-2">
-        <Card
-        title="Azure consulting"
-        body="Streamline your online presence with our expert website maintenance services. We handle updates, security, and optimization, ensuring your site runs smoothly while you focus on what matters most – your business."
-        />
-      </div>
+
     </div>
   </main>
   <div class="pb-52">
