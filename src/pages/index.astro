@@ -23,8 +23,10 @@ import Rectangleright from "../../public/Rectangle-right.svg";
 					</p>
 				</div>
 				<div class="xl:w-1/3 w-full flex flex-col items-center">
-					<span class="xl:text-[250px] text-9xl block text-blue-600 rotate-left certified -translate-x-16 icon-[arcticons--microsoft-azure]"></span>
-					<span class="xl:text-[250px] text-9xl block text-blue-800 rotate-right translate-x-16 certified icon-[simple-icons--umbraco]"></span>
+					<div id="umb-azure-experts" class="fade-right">
+						<span class="xl:text-[250px] text-9xl block text-blue-600 rotate-left certified -translate-x-16 icon-[arcticons--microsoft-azure]"></span>
+						<span class="xl:text-[250px] text-9xl block text-blue-800 rotate-right translate-x-16 certified icon-[simple-icons--umbraco]"></span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -105,6 +107,34 @@ import Rectangleright from "../../public/Rectangle-right.svg";
   opacity: 1;
 }
 
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.active.fade-left {
+  animation: fade-left 1s ease;
+}
+.active.fade-right {
+  animation: fade-right 1s ease;
+}
+
 .mwl-background {
 	background: var(--mwl-purple);
 }
@@ -129,6 +159,7 @@ import Rectangleright from "../../public/Rectangle-right.svg";
 
 <script>
 	const reveal = () => {
+		console.log("reveal running")
 		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
 		
 		if(currentPath === "") {
@@ -136,6 +167,14 @@ import Rectangleright from "../../public/Rectangle-right.svg";
 			const windowHeight = window.innerHeight;
 			const elementTop = scrollUpElement.getBoundingClientRect().top;
 			const elementVisible = 150;
+
+			const logoElement = document.getElementById("umb-azure-experts")
+			const logoElementTop = logoElement.getBoundingClientRect().top;
+			const logoVisible = 40;
+
+			if (logoElementTop < windowHeight - logoVisible) {
+				logoElement.classList.add("active");
+			}
 			
 			if (elementTop < windowHeight - elementVisible) {
 				scrollUpElement.classList.add("active");
