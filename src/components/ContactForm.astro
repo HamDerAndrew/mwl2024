@@ -7,34 +7,43 @@
   <div class="md:w-7/12 w-full">
     <form class="flex justify-center">
       <div class="w-full xl:text-3xl">
-        <div class="mb-5">
-          <input id="name" type="text" placeholder="Name" class=" bg-transparent border-4 mwl-border rounded w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 " />
+        <div class="mb-10 border-b-2 mwl-border">
+          <input id="name" type="text" placeholder="Name" class="autofill:bg-transparent bg-transparent rounded w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" />
         </div>
-        <div class="mb-5">
-          <input id="email" type="email" placeholder="Email" class="bg-transparent border-4 mwl-border rounded w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 " />
+        <div class="mb-10 border-b-2 mwl-border">
+          <input id="email" type="email" placeholder="Email" class="bg-transparent rounded w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" />
         </div>
-        <div class="mb-5">
-          <textarea id="message" class="bg-transparent border-4 mwl-border rounded w-full p-2 md:h-96 placeholder:text-white focus:ring focus:ring-blue-900 " placeholder="Message"></textarea>
+        <div class="mb-10 border-b-2 mwl-border">
+          <textarea id="message" class="bg-transparent mwl-border rounded w-full p-2 md:h-96 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" placeholder="Message"></textarea>
         </div>
-        <button class="w-full py-3 mwl-border border-4 rounded text-white" role="button" type="submit">Send</button>
+        <button class="w-full py-3 mwl-border border-2 rounded text-white" role="button" type="submit">Send</button>
       </div>
     </form>
   </div>
   <!--Let us talk splash art -->
-  <div class="bg-transparent border-4 mwl-border relative md:flex md:justify-center md:items-center md:w-5/12 md:rounded md:overflow-hidden hidden">
+  <div class="bg-transparent border mwl-border relative md:flex md:justify-center md:items-center md:w-5/12 md:rounded md:overflow-hidden hidden">
     <div class="circle circle-top invisible"></div>
-    <p class="md:text-6xl text-2xl text-white">Let's Talk!</p>
     <div class="circle circle-bottom invisible"></div>
   </div>
 </div>
 
 <style>
+
+/* A fix for handling autofill styling done by browsers */
+/* credit: https://css-tricks.com/almanac/selectors/a/autofill/ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 40rem #1D232A inset;
+}
+
 .mwl-background {
 	background: var(--mwl-purple);
 }
 
 .mwl-border {
-	border-color: var(--mwl-purple);
+	border-color: var(--mwl-yellow);
 }
 
 button:hover {
