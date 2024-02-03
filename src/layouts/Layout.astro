@@ -42,9 +42,15 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body>
-		<Navbar logoImage={Logo.src} />
+		<Navbar
+			imagePath="/src/assets/mwlogo3-yellow.png"
+			altText="The MWL logo. MWL letters and a monkey on the right"
+		/>
 		<slot />
-		<Footer logoImage={Logo.src} />
+		<Footer 
+			imagePath="/src/assets/mwlogo3-yellow.png"
+			altText="The MWL logo. MWL letters and a monkey on the right"
+		/>
 	</body>
 </html>
 <style is:global>

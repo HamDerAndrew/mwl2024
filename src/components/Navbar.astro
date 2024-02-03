@@ -1,15 +1,23 @@
 ---
+import { Image } from "astro:assets";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 
-const { LogoImage } = Astro.props
+interface Props {
+   imagePath: string;
+   altText: string;
+}
+
+const { imagePath, altText } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <nav class="bg-slate-50 py-6">
   <div class="flex justify-between container mx-auto px-8">
     <div class="w-32 self-center">
       <a href="/">
-        <img src={LogoImage}/>
+        <Image src={images[imagePath]()} alt={altText} />
       </a>
     </div>
     <!--Mobile Nav -->
