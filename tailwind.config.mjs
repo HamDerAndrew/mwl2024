@@ -11,17 +11,17 @@ export default {
 			rotate: {
 				'left': '-6deg',
 				'right': '6deg'
+			},
+			keyframes: {
+				cloudhover: {
+					"0%, 100%": {transform: "translateY(-7px)"},
+					"50%": {transform: "translateY(0px)"}
+				},
+			},
+			animation: {
+				cloudhover: "cloudhover 2s ease-in-out infinite",
 			}
 		},
-		keyframes: {
-			cloudhover: {
-				"0%, 100%": {transform: "translateY(-7px)"},
-				"50%": {transform: "translateY(0px)"}
-			}
-		},
-		animation: {
-			cloudhover: "cloudhover 2s ease-in-out infinite",
-		}
 	},
 	plugins: [ 
 		// Iconify plugin
