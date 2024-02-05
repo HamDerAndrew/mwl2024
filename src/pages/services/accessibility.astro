@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import Hero from "../../components/Hero.astro";
+import Layout from "../../layouts/Layout.astro";
+import WebsitesImage from "../../assets/service-accessibility.png";
+---
+
+<Layout title="MWL - Accessibility">
+  <Hero page="Accessibility"></Hero>
+  <div class="container mx-auto px-8 mt-12">
+    <h2 class="md:text-4xl text-3xl font-bold text-slate-50 mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Accessibility</h2>
+    <!--Image and description container -->
+    <div class="flex xl:flex-nowrap flex-wrap xl:gap-10 gap-4">
+      <div class="xl:w-1/2 w-full">
+        <Image src={WebsitesImage} class="max-w-full rounded-lg" alt="wireframes illustrating the prototype of a website" />
+      </div>
+      <div class="xl:w-1/2 w-full">
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Are you reaching all your users?Countless individuals worldwide navigate their lives with disabilities. 
+          The spectrum of these disabilities varies widely, and not all impede one's capacity to engage with the digital realm.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Yet, numerous disabilities pose challenges, constructing hurdles for individuals when it comes to navigating and comprehending certain web pages.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Incorporating diverse accessibility practices becomes paramount, ensuring inclusivity and broadening the reach of your website to the widest possible audience.
+        </p>
+        <div class="flex xl:mt-20 mt-8">
+					<a href="/contact" class="mwl-background shadow-3xl md:text-2xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Get in touch</a>
+				</div>
+      </div>
+    </div>
+    <!--List of typical service including -->
+    <div class="text-slate-50 py-40">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">What a typical Accessibility service includes:</h3>
+      <ul class="md:text-xl text-lg list-disc pl-6">
+        <li>Overview of your current solution’s accessibility</li>
+        <li>HTML optimization for accessibility</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .mwl-background{
+    background-color: var(--mwl-purple);
+  }
+</style>
