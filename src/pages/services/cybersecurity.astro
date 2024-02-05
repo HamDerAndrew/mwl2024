@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import Hero from "../../components/Hero.astro";
+import Layout from "../../layouts/Layout.astro";
+import WebsitesImage from "../../assets/service-cybersecurity.png";
+---
+
+<Layout title="MWL - Cybersecurity">
+  <Hero page="Cybersecurity"></Hero>
+  <div class="container mx-auto px-8 mt-12">
+    <h2 class="md:text-4xl text-3xl font-bold text-slate-50 mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Cybersecurity</h2>
+    <!--Image and description container -->
+    <div class="flex xl:flex-nowrap flex-wrap xl:gap-10 gap-4">
+      <div class="xl:w-1/2 w-full">
+        <Image src={WebsitesImage} class="max-w-full rounded-lg" alt="wireframes illustrating the prototype of a website" />
+      </div>
+      <div class="xl:w-1/2 w-full">
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          One could argue that you can never have too much security.If you overdo it, you make life difficult for your users. 
+          If you underdo it, there’s a greater chance of security exploits. In short; it’s not easy.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Let us help you balance the stick.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          We understand the evolving landscape of cybersecurity, especially when it comes to safeguarding your Microsoft Azure assets and websites. 
+          Our tailored suite of services is crafted to fortify your digital presence, ensuring peace of mind in an ever-changing threat environment.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Ready to fortify your digital realm? 
+        </p>
+        <div class="flex xl:mt-20 mt-8">
+					<a href="/contact" class="mwl-background shadow-3xl md:text-2xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Get in touch</a>
+				</div>
+      </div>
+    </div>
+    <!--List of typical service including -->
+    <div class="text-slate-50 py-40">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">What a typical Cybersecurity service includes:</h3>
+      <ul class="md:text-xl text-lg list-disc pl-6">
+        <li>Overview of your current solution to identify issues</li>
+        <li>Security and vulnerability testing</li>
+        <li>Suggestions for changes that can patch the exploits</li>
+        <li>Recommended actions to avoid this moving forward</li>
+      </ul>
+    </div>
+    <!--Why Azure and Websites -->
+    <div class="pb-40 w-full xl:w-1/2 text-slate-50">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">Why Microsoft Azure and websites</h3>
+      <p class="mb-4 xl:text-xl md:text-lg text-base">
+        One cannot master everything in this landscape. Therefore we put our time and energy into Microsoft Azure and websites. 
+        This focused approach allows us to provide enhanced protection, surpassing what a broad, general knowledge would offer. 
+        By dedicating our time and energy to Azure and websites, we've positioned ourselves as specialists, ensuring that you benefit 
+        from targeted and unparalleled cybersecurity solutions. 
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .mwl-background{
+    background-color: var(--mwl-purple);
+  }
+</style>
