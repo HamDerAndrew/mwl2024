@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import Hero from "../../components/Hero.astro";
+import Layout from "../../layouts/Layout.astro";
+import WebsitesImage from "../../assets/service-azureconsulting.png";
+import ToolGit from "../../assets/tools-git.png";
+import ToolAzureDevops from "../../assets/tools-azuredevops.png";
+---
+
+<Layout title="MWL - Azure Consulting">
+  <Hero page="Azure Consulting"></Hero>
+  <div class="container mx-auto px-8 mt-12">
+    <h2 class="md:text-4xl text-3xl font-bold text-slate-50 mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Azure Consulting</h2>
+    <!--Image and description container -->
+    <div class="flex xl:flex-nowrap flex-wrap xl:gap-10 gap-4">
+      <div class="xl:w-1/2 w-full">
+        <Image src={WebsitesImage} class="max-w-full rounded-lg" alt="wireframes illustrating the prototype of a website" />
+      </div>
+      <div class="xl:w-1/2 w-full">
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          With multiple Azure certifications in our arsenal, we stand ready to provide guidance and consultancy for your new or existing Azure solution.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          We assess existing infrastructures, plan migrations, and implement Azure solutions, ensuring alignment with the business objective. 
+          As an extention to that we provide performance optimazation, security, and cost-efficiency, while providing ongoing support and troubleshooting
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Beyond the certifications, we're fueled by a genuine passion for making cloud native solutions. We channel this passion into our Azure consulting. 
+          Want us to advise on your Azure solution idea, or an existing one? 
+        </p>
+        <div class="flex xl:mt-20 mt-8">
+					<a href="/contact" class="mwl-background shadow-3xl md:text-2xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Get in touch</a>
+				</div>
+      </div>
+    </div>
+    <!--List of typical service including -->
+    <div class="text-slate-50 py-40">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">What a typical Azure consulting includes:</h3>
+      <ul class="md:text-xl text-lg list-disc pl-6">
+        <li>Overview of your current infrastructure and services</li>
+        <li>Discussion on issues you are facing that you want to solve</li>
+        <li>Arcitectural advising.</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .mwl-background{
+    background-color: var(--mwl-purple);
+  }
+</style>
