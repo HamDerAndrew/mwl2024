@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import Hero from "../../components/Hero.astro";
+import Layout from "../../layouts/Layout.astro";
+import WebsitesImage from "../../assets/service-maintenance.png";
+---
+
+<Layout title="MWL - Maintenance">
+  <Hero page="Maintenance"></Hero>
+  <div class="container mx-auto px-8 mt-12">
+    <h2 class="md:text-4xl text-3xl font-bold text-slate-50 mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Maintenance</h2>
+    <!--Image and description container -->
+    <div class="flex xl:flex-nowrap flex-wrap xl:gap-10 gap-4">
+      <div class="xl:w-1/2 w-full">
+        <Image src={WebsitesImage} class="max-w-full rounded-lg" alt="wireframes illustrating the prototype of a website" />
+      </div>
+      <div class="xl:w-1/2 w-full">
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Are you grappling with the challenges of maintaining an aging website?
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Are you noticing pesky UI bugs, sluggish load times, or functionality glitches? 
+          Perhaps you find yourself in need of assistance with an existing solution that has become unwieldy?
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Allow us to alleviate your concerns and provide you with peace of mind by taking charge of the maintenance for the solution that's been keeping you awake at night. 
+          Whether it's addressing UI/UX bugs or conducting thorough database health checks, we're here to support you.
+        </p>
+        <div class="flex xl:mt-20 mt-8">
+					<a href="/contact" class="mwl-background shadow-3xl md:text-2xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Get in touch</a>
+				</div>
+      </div>
+    </div>
+    <!--List of typical service including -->
+    <div class="text-slate-50 py-40">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">What a typical Azure consulting includes:</h3>
+      <ul class="md:text-xl text-lg list-disc pl-6">
+        <li>Overview of your current solution to identify issues</li>
+        <li>UI/UX fixes</li>
+        <li>Performance optimization</li>
+        <li>SEO optimization</li>
+        <li>Monitoring</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .mwl-background{
+    background-color: var(--mwl-purple);
+  }
+</style>
