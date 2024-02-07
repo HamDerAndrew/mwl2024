@@ -2,14 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import ContactForm from "../components/ContactForm.astro";
-import RectangleLeft from "../../public/Rectangle-left.svg";
-import Rectangleright from "../../public/Rectangle-right.svg";
 ---
 
 <Layout title="MWL - Your local webagency">
 	<main>
 		<div class="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800">
-			<div class="text-left px-8">
+			<div class="hero text-left px-8">
 				<h1 class="mb-5 xl:text-9xl md:text-8xl text-6xl font-bold text-cyan-50 uppercase">We are <span id="main-highlight" class="bg-white text-purple-800">MWL</span></h1>
 				<p class="mb-5 xl:text-7xl md:text-4xl text-3xl font-bold text-cyan-50">In a jungle of choices, we are your: <span id="highlight">agency</span> </p>
 			</div>
@@ -155,9 +153,26 @@ import Rectangleright from "../../public/Rectangle-right.svg";
 	fill: var(--mwl-purple);
 }
 
+/* this SO post is gold https://stackoverflow.com/questions/37748305/css-class-priority-when-adding-dynamic-class */
+.hero {
+	opacity: 0;
+	transform: translateY(10px);
+}
+
+.hero-active {
+	opacity: 1;
+	transform: translateY(0px);
+	transition: all .4s ease-in-out;
+}
+
 </style>
 
 <script>
+	document.addEventListener("astro:page-load", () => {
+		const heroRdy = document.querySelector(".hero");
+		heroRdy.classList.toggle("hero-active");
+
+	})
 	const reveal = () => {
 		console.log("reveal running")
 		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
@@ -182,5 +197,8 @@ import Rectangleright from "../../public/Rectangle-right.svg";
 		}
 	}
 	window.addEventListener("scroll", reveal)
+	window.onload = () => {
+		console.log("loaded")
+	}
 
 </script>
