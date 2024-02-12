@@ -179,14 +179,13 @@ import ContactForm from "../components/ContactForm.astro";
 	import { gsap } from "gsap";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-	const heroTimeline = gsap.timeline()
+	document.addEventListener("astro:page-load", () => {
+		const heroTimeline = gsap.timeline()
 		heroTimeline
 		.fromTo(".first", {y: 150, opacity: 0}, {y:0, opacity: 1, duration: .6})
 		.to("#main-highlight", {color: "var(--mwl-purple)", duration: .1})
 		.to("#main-highlight", { opacity: 1, width: "auto"})
 		.fromTo(".second", {y: 150, opacity: 0,}, { y:0, opacity: 1, duration: .6})
-
-	document.addEventListener("astro:page-load", () => {
 
 	})
 
