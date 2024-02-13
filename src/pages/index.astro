@@ -8,21 +8,20 @@ import ContactForm from "../components/ContactForm.astro";
 	<main>
 		<div class="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800">
 			<div class="hero text-left px-8">
-				<!-- <h1 class="mb-5 xl:text-9xl md:text-8xl text-6xl font-bold text-cyan-50 uppercase">We are <span id="main-highlight" class="bg-white text-purple-800">MWL</span></h1> -->
-				<h1 class="first mb-5 xl:text-9xl md:text-8xl text-6xl font-bold text-cyan-50 uppercase relative">We are <span id="main-highlight" class="">MWL</span></h1>
-				<p class="second mb-5 xl:text-7xl md:text-4xl text-3xl font-bold text-cyan-50">In a jungle of choices, we are your: <span id="highlight">agency</span> </p>
+				<h1 class="first mb-5 xl:text-9xl md:text-8xl text-5xl font-bold text-cyan-50 uppercase relative">We are <span id="main-highlight" class="">MWL</span></h1>
+				<p class="second mb-5 xl:text-7xl md:text-4xl text-3xl font-bold text-cyan-50">In a jungle of choices, we are your: <span id="highlight" class="max-w-full">agency</span> </p>
 			</div>
 		</div>
 			<!--Experience -->
 		<div class="py-20">
-			<div class="container mx-auto py-11 px-8 flex xl:flex xl:flex-row flex-col-reverse xl:gap-y-0 gap-y-10">
+			<div id="umb-azure-experts" class="opacity-0 container mx-auto py-11 px-8 flex xl:flex xl:flex-row flex-col-reverse xl:gap-y-0 gap-y-10">
 				<div class="xl:w-2/3 w-full flex justify-center items-center">
-					<p class="xl:text-5xl text-5xl inline-block text-transparent bg-gradient-to-r from-fuchsia-500 to-cyan-100 bg-clip-text">
+					<p class="xl:text-[100px] text-5xl inline-block text-transparent bg-gradient-to-r from-fuchsia-500 to-cyan-100 bg-clip-text">
 						Certified Umbraco Masters and Azure Architects with over 10 years of Umbraco experience.
 					</p>
 				</div>
 				<div class="xl:w-1/3 w-full flex flex-col items-center">
-					<div id="umb-azure-experts" class="fade-left">
+					<div class="fade-left">
 						<span class="xl:text-[200px] text-9xl block text-blue-600 rotate-left certified -translate-x-16 icon-[arcticons--microsoft-azure]"></span>
 						<span class="xl:text-[200px] text-9xl block text-blue-800 rotate-right translate-x-16 certified icon-[simple-icons--umbraco]"></span>
 					</div>
@@ -39,21 +38,20 @@ import ContactForm from "../components/ContactForm.astro";
 					Explore our range of services, and let us know how we can contribute to your success
 					</p>
 
-				<div class="flex flex-col xl:flex-row xl:gap-10 gap-6 max-w-full justify-between pt-40">
-					<div class="xl:w-1/3">
+				<div class="cards flex flex-col xl:flex-row xl:gap-10 gap-6 max-w-full justify-between pt-40">
+					<div class="card xl:w-1/3">
 						<Card
 						title="Websites"
 						body="Elevate your online presence with custom websites built on Umbraco. We specialize in user-friendly designs, seamless scalability, and expert content management. Let your digital presence shine with our streamlined and innovative approach to web development."
 						/>
 					</div>
-					<div class="xl:w-1/3">
-
+					<div class="card xl:w-1/3">
 						<Card
 						title="DevOps"
 						body="Elevate your digital infrastructure with our comprehensive DevOps and Azure hosting solutions. From seamless deployment to continuous monitoring, we optimize performance and ensure scalability. Let us handle the technicalities so you can concentrate on growing your business."
 						/>
 					</div>
-					<div class="xl:w-1/3">
+					<div class="card xl:w-1/3">
 						<Card
 						title="Maintenance"
 						body="Streamline your online presence with our expert website maintenance services. We handle updates, security, and optimization, ensuring your site runs smoothly while you focus on what matters most – your business."
@@ -61,8 +59,8 @@ import ContactForm from "../components/ContactForm.astro";
 					</div>
 				</div>
 
-				<div class="flex justify-center mt-20">
-					<a href="/services" class="shadow-3xl md:text-3xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">More</a>
+				<div  class="flex justify-center mt-20">
+					<a id="more-btn" href="/services" class="opacity-0 shadow-3xl md:text-3xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">More</a>
 				</div>
 
 			</div>
@@ -101,56 +99,12 @@ import ContactForm from "../components/ContactForm.astro";
 	position: relative;
 }
 
-#what-we-do {
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-#what-we-do.active {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-@keyframes fade-left {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes fade-right {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.active.fade-left {
-  animation: fade-left 1s ease;
-}
-.active.fade-right {
-  animation: fade-right 1s ease;
-}
-
 .mwl-background {
 	background: var(--mwl-purple);
 }
 
 .mwl-figure {
 	background-color: var(--mwl-yellow);
-}
-
-.minus-margin-bottom {
-	margin-bottom: -90px;
 }
 
 .mwl-border {
@@ -161,60 +115,59 @@ import ContactForm from "../components/ContactForm.astro";
 	fill: var(--mwl-purple);
 }
 
-/* this SO post is gold https://stackoverflow.com/questions/37748305/css-class-priority-when-adding-dynamic-class */
-/* .hero {
-	opacity: 0;
-	transform: translateY(10px);
-}
-
-.hero-active {
-	opacity: 1;
-	transform: translateY(0px);
-	transition: all .4s ease-in-out;
-} */
-
 .first, .second {
 	opacity: 0;
 }
 
+#more-btn a {
+	opacity: 0;
+}
 </style>
 
 <script>
 	import { gsap } from "gsap";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
 
 	document.addEventListener("astro:page-load", () => {
-		const heroTimeline = gsap.timeline()
-		heroTimeline
-		.fromTo(".first", {y: 150}, {y:0, opacity: 1, duration: .6})
-		.to("#main-highlight", {color: "var(--mwl-purple)", duration: .1})
-		.to("#main-highlight", { opacity: 1, width: "auto"})
-		.fromTo(".second", {y: 150}, { y:0, opacity: 1, duration: .6})
-
-	})
-
-	const reveal = () => {
-		console.log("reveal running")
 		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
 		
 		if(currentPath === "") {
-			const scrollUpElement = document.getElementById("what-we-do");
-			const windowHeight = window.innerHeight;
-			const elementTop = scrollUpElement.getBoundingClientRect().top;
-			const elementVisible = 150;
+			const heroTimeline = gsap.timeline()
 
-			const logoElement = document.getElementById("umb-azure-experts")
-			const logoElementTop = logoElement.getBoundingClientRect().top;
-			const logoVisible = 40;
+			heroTimeline
+			.fromTo(".first", {y: 150}, {y:0, opacity: 1, duration: .6})
+			.to("#main-highlight", {color: "var(--mwl-purple)", duration: .1})
+			.to("#main-highlight", { opacity: 1, width: "auto"})
+			.fromTo(".second", {y: 150}, { y:0, opacity: 1, duration: .6})
 
-			if (logoElementTop < windowHeight - logoVisible) {
-				logoElement.classList.add("active");
-			}
-			
-			if (elementTop < windowHeight - elementVisible) {
-				scrollUpElement.classList.add("active");
-			}
+			// umbraco azure experts animation
+			gsap.to("#umb-azure-experts", {
+				scrollTrigger: "#umb-azure-experts",
+				delay: .3,
+				opacity: 1,
+			})
+
+			//card scroll animation
+			gsap.from(".card", {
+				scrollTrigger: {
+					trigger: ".cards",
+				},
+				y: 400,
+				stagger: 0.2,
+				opacity: 0
+			})
+
+			//button animation
+			gsap.to("#more-btn", {
+				immediateRender: false,
+				scrollTrigger: {
+					trigger: ".cards",
+				},
+				opacity: 1,
+				delay: 1
+			})
 		}
-	}
-	window.addEventListener("scroll", reveal)
+	})
+
 </script>
