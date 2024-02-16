@@ -5,16 +5,16 @@
 <div class="container mx-auto px-8 flex justify-center gap-2 pt-32 relative">
   <!--Contact form -->
   <div class="md:w-7/12 w-full">
-    <form class="flex justify-center">
+    <form class="flex justify-center" method="post" data-netlify="true">
       <div class="w-full xl:text-3xl">
         <div class="mb-10 border-b-2 mwl-border">
-          <input id="name" type="text" placeholder="Name" class="autofill:bg-transparent bg-transparent w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" />
+          <input required id="name" name="name" type="text" placeholder="Name" class="autofill:bg-transparent bg-transparent w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" />
         </div>
         <div class="mb-10 border-b-2 mwl-border">
-          <input id="email" type="email" placeholder="Email" class="bg-transparent w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" />
+          <input required id="email" name="email" type="email" placeholder="Email" class="bg-transparent w-full p-2 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" />
         </div>
         <div class="mb-10 border-b-2 mwl-border">
-          <textarea id="message" class="bg-transparent sm:h-auto h-36 mwl-border rounded w-full p-2 md:h-96 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" placeholder="Message"></textarea>
+          <textarea required id="message" name="message" class="bg-transparent sm:h-auto h-36 mwl-border rounded w-full p-2 md:h-96 placeholder:text-white focus:ring focus:ring-blue-900 text-slate-50" placeholder="Message"></textarea>
         </div>
         <button class="md:w-44 rounded-full w-full py-3 mwl-border border text-white transition-transform transform-gpu hover:-translate-y-1" role="button" type="submit">Send</button>
       </div>
@@ -108,9 +108,27 @@ button:hover {
 <script>
 	document.addEventListener('astro:page-load', (event) => {
 		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
-    // the double contact check is temporary. In prod there is a trailing / and that is not present in dev
+		// the double contact check is temporary. In prod there is a trailing / and that is not present in dev
 		if(currentPath === "" || (currentPath === "contact" || currentPath === "contact/")) {
-			myAnimation()
+			const handleSubmit = (e) => {
+			e.preventDefault();
+			
+			const contactForm = e.target;
+			const formData = new FormData(contactForm);
+
+			fetch("/", {
+				method: "POST",
+				headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				// @ts-ignore
+				body: new URLSearchParams(formData).toString()
+			})
+			.then(() => console.log("Form was submitted successfully"))
+			.catch((error) => alert(error));
+		}
+
+		document.querySelector("form").addEventListener("submit", handleSubmit)
+		
+		myAnimation()
 		}
 	})
 
