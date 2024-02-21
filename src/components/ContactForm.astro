@@ -19,12 +19,16 @@
         <button class="md:w-44 rounded-full w-full py-3 mwl-border border text-white transition-transform transform-gpu hover:-translate-y-1" role="button" type="submit">Send</button>
       </div>
     </form>
+		<p id="submit-error" class="pt-6 text-red-400 hidden">Hmmm something went wrong. Try again.</p>
   </div>
   <!--Let us talk splash art -->
   <div class="bg-transparent relative md:flex md:justify-center md:items-center md:w-5/12 md:rounded md:overflow-hidden hidden">
     <div class="circle circle-top invisible"></div>
     <div class="circle circle-bottom invisible"></div>
   </div>
+	<div id="submit-success" class="absolute h-full w-full z-10 mwl-background-dark hidden">
+		<p class="text-slate-50 text-xl sm:text-3xl">Thank you! <br /> You will hear from us asap.</p>
+	</div>
 </div>
 
 <style>
@@ -40,6 +44,10 @@ input:-webkit-autofill:focus {
 
 .mwl-background {
 	background: var(--mwl-purple);
+}
+
+.mwl-background-dark {
+	background: var(--mwl-dark);
 }
 
 .mwl-border {
@@ -108,6 +116,9 @@ button:hover {
 <script>
 	document.addEventListener('astro:page-load', (event) => {
 		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
+		const successMsg = document.getElementById("submit-success")
+		const errorMsg = document.getElementById("submit-error")
+
 		// the double contact check is temporary. In prod there is a trailing / and that is not present in dev
 		if(currentPath === "" || (currentPath === "contact" || currentPath === "contact/")) {
 			const handleSubmit = (e) => {
@@ -122,8 +133,16 @@ button:hover {
 				// @ts-ignore
 				body: new URLSearchParams(formData).toString()
 			})
-			.then(() => console.log("Form was submitted successfully"))
-			.catch((error) => alert(error));
+			.then(() => {
+				console.log("Form was submitted successfully")
+				successMsg.classList.add("flex", "justify-center", "items-center")
+				successMsg.classList.remove("hidden")
+			})
+			.catch((error) => {
+				alert(error)
+				errorMsg.classList.remove("hidden")
+				errorMsg.classList.add("block")
+			});
 		}
 
 		document.querySelector("form").addEventListener("submit", handleSubmit)
