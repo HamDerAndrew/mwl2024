@@ -26,6 +26,11 @@
     <div class="circle circle-top invisible"></div>
     <div class="circle circle-bottom invisible"></div>
   </div>
+	
+	<div id="loading-container" class="absolute h-full w-full z-10 mwl-background-dark hidden">
+		<span class="loader block"></span>
+	</div>
+
 	<div id="submit-success" class="absolute h-full w-full z-10 mwl-background-dark hidden">
 		<p class="text-slate-50 text-xl sm:text-3xl">Thank you! <br /> You will hear from us asap.</p>
 	</div>
@@ -111,6 +116,26 @@ button:hover {
 .name-animation {
 	padding: 50px;
 }
+
+.loader {
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    animation: skLinRotate 1s ease-in-out infinite alternate;
+  }
+  .loader:after{
+    content:"";
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: var(--mwl-purple);
+  }
+  @keyframes skLinRotate {
+    95% ,100% { transform: rotate(840deg) }
+  }
 </style>
 
 <script>
@@ -118,36 +143,41 @@ button:hover {
 		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
 		const successMsg = document.getElementById("submit-success")
 		const errorMsg = document.getElementById("submit-error")
+		const loader = document.getElementById("loading-container")
 
 		// the double contact check is temporary. In prod there is a trailing / and that is not present in dev
 		if(currentPath === "" || (currentPath === "contact" || currentPath === "contact/")) {
 			const handleSubmit = (e) => {
-			e.preventDefault();
-			
-			const contactForm = e.target;
-			const formData = new FormData(contactForm);
+				e.preventDefault()
+				
+				const contactForm = e.target;
+				const formData = new FormData(contactForm);
+				loader.classList.remove("hidden")
+				loader.classList.add("flex", "justify-center", "items-center")
 
-			fetch("/", {
-				method: "POST",
-				headers: { "Content-Type": "application/x-www-form-urlencoded" },
-				// @ts-ignore
-				body: new URLSearchParams(formData).toString()
-			})
-			.then(() => {
-				console.log("Form was submitted successfully")
-				successMsg.classList.add("flex", "justify-center", "items-center")
-				successMsg.classList.remove("hidden")
-			})
-			.catch((error) => {
-				alert(error)
-				errorMsg.classList.remove("hidden")
-				errorMsg.classList.add("block")
-			});
-		}
+				fetch("/", {
+					method: "POST",
+					headers: { "Content-Type": "application/x-www-form-urlencoded" },
+					// @ts-ignore
+					body: new URLSearchParams(formData).toString()
+				})
+				.then(() => {
+					console.log("Form was submitted successfully")
+					successMsg.classList.add("flex", "justify-center", "items-center")
+					successMsg.classList.remove("hidden")
+					loader.classList.add("hidden")
+				})
+				.catch((error) => {
+					alert(error)
+					errorMsg.classList.remove("hidden")
+					errorMsg.classList.add("block")
+					loader.classList.add("hidden")
+				});
+			}
 
-		document.querySelector("form").addEventListener("submit", handleSubmit)
+			document.querySelector("form").addEventListener("submit", handleSubmit)
 		
-		myAnimation()
+			myAnimation()
 		}
 	})
 
