@@ -1,0 +1,23 @@
+[[redirects]]
+  from = "https://monkeyswithlaptops.io"
+  to = "https://mwl.nu"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.monkeyswithlaptops.io"
+  to = "https://mwl.nu"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://mwl.agency"
+  to = "https://mwl.nu"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.mwl.agency"
+  to = "https://mwl.nu"
+  status = 301
+  force = true
