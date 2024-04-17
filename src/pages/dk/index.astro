@@ -1,0 +1,176 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import ContactForm from "../../components/ContactForm.astro";
+
+import { getRelativeLocaleUrl } from 'astro:i18n';
+const servicesURL = getRelativeLocaleUrl("dk", "services");
+---
+
+<Layout title="MWL - Dit lokale webbureau">
+	<main>
+		<!-- <div class="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800"> -->
+		<div class="flex justify-center items-center min-h-screen mwl-background">
+			<div class="hero text-left px-8">
+				<h1 class="first mb-5 xl:text-9xl md:text-8xl text-5xl font-bold text-cyan-50 uppercase relative">Vi er <span id="main-highlight" class="">MWL</span></h1>
+				<p class="second mb-5 xl:text-7xl md:text-4xl text-3xl font-bold text-cyan-50">I en jungel af muligheder er vi dit: <span id="highlight" class="max-w-full">webbureau</span> </p>
+			</div>
+		</div>
+			<!--Experience -->
+		<div class="py-20">
+			<div id="umb-azure-experts" class="opacity-0 container mx-auto py-11 px-8 flex xl:flex xl:flex-row flex-col-reverse xl:gap-y-0 gap-y-10">
+				<div class="xl:w-2/3 w-full flex justify-center items-center">
+					<p class="xl:text-[100px] text-5xl inline-block text-transparent bg-gradient-to-r from-fuchsia-500 to-cyan-100 bg-clip-text">
+						Certificerede Umbraco Masters og Azure Arkitekter med over 10 års Umbraco erfaring i bagagen.
+					</p>
+				</div>
+				<div class="xl:w-1/3 w-full md:flex flex-col items-center hidden">
+					<div class="fade-left">
+						<span class="xl:text-[200px] text-9xl block text-blue-600 rotate-left certified -translate-x-16 icon-[arcticons--microsoft-azure]"></span>
+						<span class="xl:text-[200px] text-9xl block text-blue-800 rotate-right translate-x-16 certified icon-[simple-icons--umbraco]"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Services -->
+		<div class="py-44 mwl-background">
+			<div id="what-we-do" class="container mx-auto py-11 px-8">
+				<h3 class="text-center text-5xl md:text-7xl font-bold text-white mb-6">Filosofi og arbejde</h3>
+				<p class="text-center text-white md:text-3xl text-xl mb-6">
+					I alt hvad vi påtager os, står vi støt ved din side gennem hele processen. 
+					Uanset om du søger at etablere din virksomhed online med en hjemmeside, kæmper med de voksende krav om at vedligeholde en eksisterende, eller står over for andre udfordringer, kan du være sikker på, at vi er her for at hjælpe dig. 
+					Udforsk vores udvalg af services, og lad os vide, hvordan vi kan bidrage til din succes.
+					</p>
+
+				<div class="cards flex flex-col xl:flex-row xl:gap-10 gap-6 max-w-full justify-between pt-40">
+					<div class="card xl:w-1/3">
+						<Card
+						title="Hjemmesider"
+						body="Gør din online tilstedeværelse kendt med skræddersyede hjemmesider bygget på Umbraco. Vi specialiserer os i brugervenligt design, nem skalerbarhed og ekspertindholdsstyring. Lad din digitale tilstedeværelse skinne med vores strømlinede og innovative tilgang til webudvikling."
+						/>
+					</div>
+					<div class="card xl:w-1/3">
+						<Card
+						title="DevOps"
+						body="Optimer din digitale infrastruktur med vores omfattende DevOps- og Azure-hostingløsninger. Fra gnidningsløs implementering til kontinuerlig overvågning optimerer vi ydeevnen og sikrer skalerbarhed. Lad os håndtere de tekniske detaljer, så du kan koncentrere dig om at vækste din virksomhed."
+						/>
+					</div>
+					<div class="card xl:w-1/3">
+						<Card
+						title="Vedligeholdelse"
+						body="Få tjekket din hjemmeside - eller få den håndteret - med vores vedligeholdelsestjenester. Vi håndterer opdateringer, sikkerhed og optimering, så din hjemmeside kører problemfrit, mens du fokuserer på det, der betyder mest - din virksomhed."
+						/>
+					</div>
+				</div>
+				<div  class="flex justify-center mt-20">
+					<a id="more-btn" href={servicesURL} class="opacity-0 shadow-3xl md:text-3xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Se mere</a>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="w-full">
+			<div class="custom-shape-divider-top-1706452744">
+				<svg class="triangle-divider" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+						<path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+				</svg>
+			</div>
+		</div>
+
+		<!--Work together -->
+		<div class="pb-72 pt-44">
+			<div class="px-8">
+				<h3 class="text-7xl text-white text-center font-bold mb-4">Lad os hjælpe dig</h3>
+				<p class="text-3xl text-white text-center font-bold">Vi vil elske at tale med dig om, hvordan vi kan gøre din online oplevelse bedre.</p>
+			</div>
+			<ContactForm />
+		</div>
+	</main>
+</Layout>
+
+<style>
+#main-highlight {
+	font-family: 'Zilla Slab', serif;
+	display: inline-block;
+	width: 0;
+	color: transparent;
+	background-color: white;
+}
+
+#highlight {
+	color: #FFD700;
+	position: relative;
+}
+
+.mwl-background {
+	background: var(--mwl-purple);
+}
+
+.mwl-figure {
+	background-color: var(--mwl-yellow);
+}
+
+.mwl-border {
+	border-color: var(--mwl-white-border);
+}
+
+.triangle-divider {
+	fill: var(--mwl-purple);
+}
+
+.first, .second {
+	opacity: 0;
+}
+
+#more-btn a {
+	opacity: 0;
+}
+</style>
+
+<script>
+	import { gsap } from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+
+	document.addEventListener("astro:page-load", () => {
+		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
+		
+		if(currentPath === "dk") {
+			const heroTimeline = gsap.timeline()
+
+			heroTimeline
+			.fromTo(".first", {y: 150}, {y:0, opacity: 1, duration: .6})
+			.to("#main-highlight", {color: "var(--mwl-purple)", duration: .1})
+			.to("#main-highlight", { opacity: 1, width: "auto"})
+			.fromTo(".second", {y: 150}, { y:0, opacity: 1, duration: .6})
+
+			// umbraco azure experts animation
+			gsap.to("#umb-azure-experts", {
+				scrollTrigger: "#umb-azure-experts",
+				delay: .3,
+				opacity: 1,
+			})
+
+			//card scroll animation
+			gsap.from(".card", {
+				scrollTrigger: {
+					trigger: ".cards",
+				},
+				y: 400,
+				stagger: 0.2,
+				opacity: 0
+			})
+
+			//button animation
+			gsap.to("#more-btn", {
+				immediateRender: false,
+				scrollTrigger: {
+					trigger: ".cards",
+				},
+				opacity: 1,
+				delay: 1
+			})
+		}
+	})
+
+</script>

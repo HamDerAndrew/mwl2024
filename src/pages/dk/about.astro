@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+---
+
+<Layout title="MWL - Dit lokale webbureau">
+  <Hero page="about" />
+  <main transition:animate="slide" class="text-white container mx-auto py-20 sm:py-52 text-xl px-8">
+    <p><span class="mwl-yellow">MWL</span> består af tre erfarne udviklere, Darek, Jakob og André.
+      Vores rejse begyndte i hjertet af Umbraco HQ. 
+      Med en samlet erfaring på over 10 år med at arbejde med Umbraco, præsenterer vi stolt os selv som certificerede Umbraco Masters og Azure Architects.
+    </p>
+    <br />
+    <p>
+      Darek, vores DevOps-maestro, sikrer den sømløse integration af udvikling og drift, hvilket baner vejen for effektive og pålidelige systemer. 
+      Med et skarpt øje for optimering og en rig erfaring med at håndtere de kompleksiteter, der er forbundet med implementering, er Darek rygraden i vores tekniske infrastruktur.
+    </p>
+    <br />
+    <p>
+      Mød Jakob, den kodende virtuos specialiseret i backend-udvikling. Med et årtis forpligtelse til at forfine sit håndværk, ligger Jakobs ekspertise i at skabe robuste og skalerbare løsninger. 
+      Hans dybdegående viden om Umbraco og innovative tilgang til backend-udfordringer gør ham til en uvurderlig ressource for vores team.
+    </p>
+    <br />
+    <p>
+      Kompletterende vores trio er André, den kunstneriske hjerne bag vores frontend-magi. 
+      En frontend-magiker med passion for at skabe brugercentriske og visuelt imponerende grænseflader, bringer André en unik blanding af kreativitet og teknisk finesse til hvert projekt. 
+      Hans forpligtelse til at levere sømløse brugeroplevelser er tydelig i hver linje kode, han skriver. 
+    </p>
+    <br />
+    <p>
+      Hos <span class="mwl-yellow">MWL</span> handler vores samarbejde ikke kun om færdigheder; det handler om fælles værdier, en forpligtelse til excellence og en passion for at skubbe grænserne for, hvad der er muligt. 
+      Med Umbraco som vores lærred og Azure som vores legeplads påbegynder vi en rejse for at omsætte dine digitale drømme til virkelighed.
+    </p>
+    <br />
+    <p>
+      Kom og vær med, mens vi navigerer i det evigt skiftende landskab af webudvikling, drevet af vores dybt forankrede Umbraco-arv og Azure-ekspertise. 
+      Uanset om du forestiller dig en dynamisk hjemmeside, en kraftfuld webapplikation eller en skræddersyet løsning, har vi færdighederne og dedikationen til at bringe dine ideer til live.
+    </p>    
+  </main>
+</Layout>
+
+<style>
+  .mwl-yellow {
+    color: var(--mwl-yellow-bright);
+  }
+</style>
