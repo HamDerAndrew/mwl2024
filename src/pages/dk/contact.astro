@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<Layout title="MWL - Your local webagency">
+  <Hero page="contact" />
+  <main transition:animate="slide" class="text-white container mx-auto py-20 sm:py-52">
+    <h2 class="text-xl md:text-5xl px-8 font-bold">Vi vil rigtig gerne høre fra  <span class="mwl-yellow">dig</span></h2>
+    <p class="px-8 md:text-xl"> Har du en idé til et projekt eller mangler du hjælp til et nuværende? <br /> Send os en uforpligtende besked og vi vender tilbage til dig hurtigst muligt!</p>
+    <ContactForm />
+  </main>
+</Layout>
+
+<style>
+  .mwl-yellow {
+    color: var(--mwl-yellow-bright);
+  }
+</style>
