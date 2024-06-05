@@ -135,7 +135,7 @@ const servicesURL = getRelativeLocaleUrl("dk", "services");
 	document.addEventListener("astro:page-load", () => {
 		const currentPath = window.location.pathname.slice(1) // Removing the "/" from path
 		
-		if(currentPath === "dk" || currentPath === "dk/") {
+		if(currentPath === "dk" || currentPath === "/dk") {
 			const heroTimeline = gsap.timeline()
 
 			heroTimeline
