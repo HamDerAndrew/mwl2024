@@ -42,8 +42,8 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
     </div>
     <!--Standard Nav -->
     <div class="self-center text-lg sm:block hidden">
-      <a href=`${lang === "dk" ? homeURL : "/"}` class=`mr-4 ${currentPath === "" ? "active" : ""}`>Home</a>
-      <a href=`${lang === "dk" ? servicesURL : "/services"}` class=`mr-4 ${currentPath === "services/" ? "active" : ""}`>Services</a>
+      <a href=`${lang === "dk" ? homeURL : "/"}` class=`mr-4 ${currentPath === "" || "/dk" ? "active" : ""}`>Home</a>
+      <a href=`${lang === "dk" ? servicesURL : "/services"}` class=`mr-4 ${currentPath === "services/" || "/dk/services" ? "active" : ""}`>Services</a>
       <a href=`${lang === "dk" ? aboutURL : "/about"}` class=`mr-4 ${currentPath === "about/" ? "active" : ""}`>About</a>
       <a href=`${lang === "dk" ? contactURL : "/contact"}` class=`${currentPath === "contact/" ? "active" : ""}`>Contact</a>
       <!-- <div class="dropdown inline-block relative align-top ml-3 pl-2 pr-2">
