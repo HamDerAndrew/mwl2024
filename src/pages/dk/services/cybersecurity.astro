@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import Hero from "../../../components/Hero.astro";
+import Layout from "../../../layouts/Layout.astro";
+import WebsitesImage from "../../../assets/service-cybersecurity.png";
+---
+
+<Layout title="MWL - Cybersikkerhed">
+  <Hero page="Cybersikkerhed"></Hero>
+  <div class="container mx-auto px-8 mt-12">
+    <h2 class="md:text-4xl text-3xl font-bold text-slate-50 mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Cybersikkerhed</h2>
+    <!--Image and description container -->
+    <div class="flex xl:flex-nowrap flex-wrap xl:gap-10 gap-4">
+      <div class="xl:w-1/2 w-full">
+        <Image src={WebsitesImage} class="max-w-full rounded-lg" alt="wireframes illustrating the prototype of a website" />
+      </div>
+      <div class="xl:w-1/2 w-full">
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Man kunne argumentere for, at man aldrig kan have for meget sikkerhed. Hvis du overdriver det, gør du livet svært for dine brugere. 
+          Hvis du underdriver det, er der større risiko for sikkerhedshuller. 
+          Kort sagt; det er ikke nemt.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Lad os hjælpe dig med at finde den rette balance.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Vi forstår det skiftende landskab inden for cybersikkerhed, især når det handler om at beskytte dine Microsoft Azure-aktiver og hjemmesider. 
+          Vores skræddersyede pakke af tjenester er udformet til at styrke din digitale tilstedeværelse og sikre ro i sindet i et konstant skiftende trusselsmiljø.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Er du klar til at styrke din digitale verden? 
+        </p>
+        <div class="flex xl:mt-20 mt-8">
+					<a href="/dk/contact" class="mwl-background shadow-3xl md:text-2xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Kontakt os</a>
+				</div>
+      </div>
+    </div>
+    <!--List of typical service including -->
+    <div class="text-slate-50 py-40">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">Hvad en typisk Cybersikkerhed service inkludere:</h3>
+      <ul class="md:text-xl text-lg list-disc pl-6">
+        <li>Oversigt over din nuværende løsning for at identificere problemer</li>
+        <li>Sikkerheds- og sårbarhedstestning</li>
+        <li>Forslag til ændringer, der kan lappe sikkerhedshullerne</li>
+        <li>Anbefalede handlinger for at undgå dette fremadrettet</li>
+      </ul>
+    </div>
+    <!--Why Azure and Websites -->
+    <div class="pb-40 w-full xl:w-1/2 text-slate-50">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">Hvorfor Microsoft Azure og hjemmesider</h3>
+      <p class="mb-4 xl:text-xl md:text-lg text-base">
+        Man kan ikke mestre alt i dette landskab. 
+        Derfor lægger vi vores tid og energi i Microsoft Azure og hjemmesider. 
+        Denne fokuserede tilgang gør det muligt for os at levere forbedret beskyttelse, der overstiger, hvad en bred, generel viden ville tilbyde. 
+        Ved at dedikere vores tid og energi til Microsoft Azure og hjemmesider har vi positioneret os som specialister og sikrer, at du nyder godt 
+        af målrettede og enestående cybersikkerhedsløsninger.
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .mwl-background{
+    background-color: var(--mwl-purple);
+  }
+</style>

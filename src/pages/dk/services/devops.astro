@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+import Hero from "../../../components/Hero.astro";
+import Layout from "../../../layouts/Layout.astro";
+import WebsitesImage from "../../../assets/service-devops.png";
+import ToolGit from "../../../assets/tools-git.png";
+import ToolAzureDevops from "../../../assets/tools-azuredevops.png";
+---
+
+<Layout title="MWL - DevOps">
+  <Hero page="DevOps"></Hero>
+  <div class="container mx-auto px-8 mt-12">
+    <h2 class="md:text-4xl text-3xl font-bold text-slate-50 mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">DevOps</h2>
+    <!--Image and description container -->
+    <div class="flex xl:flex-nowrap flex-wrap xl:gap-10 gap-4">
+      <div class="xl:w-1/2 w-full">
+        <Image src={WebsitesImage} class="max-w-full rounded-lg" alt="wireframes illustrating the prototype of a website" />
+      </div>
+      <div class="xl:w-1/2 w-full">
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Hosting, deployment, tests og alle de andre aspekter af udvikleroperationer kan være komplekse. 
+          Lad os hjælpe dig med at opsætte dit workflow - din DevOps!
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Vi vejleder eller leder Azure DevOps-implementeringer, fremmer samarbejde, automatiserer arbejdsgange og fremskynder projektlevering.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Optimer processer fra versionskontrol til deployment og sikrer effektivitet for Azure, Umbraco og forskelligartede landskaber.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Er du klar til at tage din DevOps til det næste niveau?
+        </p>
+        <div class="flex xl:mt-20 mt-8">
+					<a href="/contact" class="mwl-background shadow-3xl md:text-2xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Kontakt os</a>
+				</div>
+      </div>
+    </div>
+    <!--List of typical service including -->
+    <div class="text-slate-50 pt-40">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">What a typical DevOps service includes:</h3>
+      <ul class="md:text-xl text-lg list-disc pl-6">
+        <li>Arkitektonisk oversigt</li>
+        <li>Azure DevOps</li>
+        <li>Git</li>
+        <li>IaC - Infrastructure as Code</li>
+        <li>Skalerbarhed</li>
+      </ul>
+    </div>
+    <!--The tools we use -->
+    <div class="text-slate-50 py-40">
+      <h3 class="md:text-4xl text-3xl font-bold mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Vores værktøjer:</h3>
+      <div class="flex flex-col-reverse xl:flex-row md:flex-row-reverse gap-7">
+        <div class="md:pt-11 pt-6 flex flex-wrap xl:flex-col xl:gap-10 xl:w-1/2 md:w-full md:gap-y-8 gap-y-8">
+          <div class="flex items-center flex-wrap justify-center xl:justify-normal">
+            <Image class="animate-cloudhover" src={ToolGit} alt="A purple cloud with an Umbraco icon in the middle of it"/>
+            <div class="ml-4 xl:mt-0 md:mt-3 xl:text-left text-center">
+              <h4 class="xl:text-2xl md:text-xl text-slate-50 font-bold">Git</h4>
+              <p class="xl:text-xl md:text-lg text-slate-50">Version control</p>
+            </div>
+          </div>
+          <div class="flex items-center flex-wrap justify-center xl:justify-normal">
+            <Image class="animate-cloudhover" src={ToolAzureDevops} alt="A purple cloud with a Microsoft Azure icon in the middle of it"/>
+            <div class="ml-4 xl:mt-0 md:mt-3 xl:text-left text-center">
+              <h4 class="xl:text-2xl md:text-xl text-slate-50 font-bold">Azure DevOps</h4>
+              <p class="xl:text-xl md:text-lg text-slate-50">CI/CD</p>
+            </div>
+          </div>
+        </div>
+        <div class="md:pt-11 pt-6 xl:w-1/2 md:w-full">
+          <h4 class="text-2xl text-slate-50 font-bold mb-4">Microsoft Azure</h4>
+          <p class="text-slate-50 text-xl mb-4">
+            When it comes to managed hosting, deployment, and CI/CD we choose Azure to do the job.
+          </p>
+          <p class="text-slate-50 text-xl">
+            As certified Azure Architects, we harness our profound knowledge in the platform to deliver a tailored DevOps solution that will 
+            make your deployments and workflows easier and more efficient.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .mwl-background{
+    background-color: var(--mwl-purple);
+  }
+</style>

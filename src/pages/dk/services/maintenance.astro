@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import Hero from "../../../components/Hero.astro";
+import Layout from "../../../layouts/Layout.astro";
+import WebsitesImage from "../../../assets/service-maintenance.png";
+---
+
+<Layout title="MWL - Vedligeholdelse">
+  <Hero page="Vedligeholdelse"></Hero>
+  <div class="container mx-auto px-8 mt-12">
+    <h2 class="md:text-4xl text-3xl font-bold text-slate-50 mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Vedligeholdelse</h2>
+    <!--Image and description container -->
+    <div class="flex xl:flex-nowrap flex-wrap xl:gap-10 gap-4">
+      <div class="xl:w-1/2 w-full">
+        <Image src={WebsitesImage} class="max-w-full rounded-lg" alt="wireframes illustrating the prototype of a website" />
+      </div>
+      <div class="xl:w-1/2 w-full">
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Kæmper du med udfordringerne ved at vedligeholde en aldrende hjemmeside?
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Mærker du irriterende UI-fejl, sløve indlæsningstider eller funktionsfejl?
+          Måske har du brug for hjælp til en eksisterende løsning, der er blevet uhåndterlig?
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Lad os lindre dine bekymringer og give dig ro i sindet ved at tage ansvar for vedligeholdelsen af den løsning, der har holdt dig vågen om natten. 
+          Uanset om det handler om at løse UI/UX-fejl eller gennemføre omfattende sundhedstjek af databasen, er vi her for at støtte dig.
+        </p>
+        <div class="flex xl:mt-20 mt-8">
+					<a href="/dk/contact" class="mwl-background shadow-3xl md:text-2xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Kontakt os</a>
+				</div>
+      </div>
+    </div>
+    <!--List of typical service including -->
+    <div class="text-slate-50 py-40">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">What a typical Maintenance offering includes:</h3>
+      <ul class="md:text-xl text-lg list-disc pl-6">
+        <li>Oversigt over din nuværende løsning for at identificere problemer</li>
+        <li>UI/UX rettelser</li>
+        <li>Optimering af ydeevne</li>
+        <li>SEO optimering</li>
+        <li>Monitorering</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .mwl-background{
+    background-color: var(--mwl-purple);
+  }
+</style>

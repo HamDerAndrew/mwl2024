@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+import Hero from "../../../components/Hero.astro";
+import Layout from "../../../layouts/Layout.astro";
+import WebsitesImage from "../../../assets/service-websites.jpg";
+import ToolUmbracoCloud from "../../../assets/tools-umbracocloud.png";
+import ToolMsAzure from "../../../assets/tools-msazure.png";
+---
+
+<Layout title="MWL - Hjemmesider">
+  <Hero page="Hjemmesider"></Hero>
+  <div class="container mx-auto px-8 mt-12">
+    <h2 class="md:text-4xl text-3xl font-bold text-slate-50 mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Hjemmesider</h2>
+    <!--Image and description container -->
+    <div class="flex xl:flex-nowrap flex-wrap xl:gap-10 gap-4">
+      <div class="xl:w-1/2 w-full">
+        <Image src={WebsitesImage} class="max-w-full rounded-lg" alt="wireframes illustrating the prototype of a website" />
+      </div>
+      <div class="xl:w-1/2 w-full">
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Når det kommer til at udvikle en hjemmeside, er der ingen hemmelig magisk formel. 
+          Hjemmesider kommer i alle former og størrelser. Det afhænger af, hvilket formål de skal tjene.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Hos MWL handler det ikke kun om kodning og de andre tekniske aspekter. 
+          Vi fokusere på at hjælpe din virksomhed med at løse de problemer, du står overfor.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Uanset om du træder ind i den online verden for første gang eller søger at revitalisere 
+          din eksisterende digitale tilstedeværelse, er vi her for at guide dig hvert skridt på vejen.
+        </p>
+        <p class="mb-4 text-slate-50 xl:text-xl md:text-lg text-base">
+          Vil du udforske dine muligheder?
+        </p>
+        <div class="flex xl:mt-20 mt-8">
+					<a href="/dk/contact" class="mwl-background shadow-3xl md:text-2xl text-xl text-center p-3 text-white border-black rounded-full border-solid border w-64 transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">Kontakt os</a>
+				</div>
+      </div>
+    </div>
+    <!--List of typical service including -->
+    <div class="text-slate-50 pt-40">
+      <h3 class="xl:text-4xl text-3xl font-bold mb-4">Hvad en typisk hjemmeside inkluderer:</h3>
+      <ul class="md:text-xl text-lg list-disc pl-6">
+        <li>Hjemmside design</li>
+        <li>Responsivt design (design der viker - og ser godt ud på smartphones, tablets, PC osv.) </li>
+        <li>SEO optimering (Google's evne til at finde din hjemmeside, samt rangere den)</li>
+        <li>Tilgængelighed - hvor tilgængelig er din hjemmeside for folk med handikap</li>
+        <li>Content management brugerflade - nem håndtering og opdatering af indhold</li>
+      </ul>
+    </div>
+    <!--The tools we use -->
+    <div class="text-slate-50 py-40">
+      <h3 class="md:text-4xl text-3xl font-bold mb-4 underline decoration-solid decoration-2 decoration-yellow-400 underline-offset-8">Vores værktøjer:</h3>
+      <div class="flex flex-col-reverse xl:flex-row md:flex-row-reverse gap-7">
+        <div class="md:pt-11 pt-6 flex flex-wrap xl:flex-col xl:gap-10 xl:w-1/2 md:w-full md:gap-y-8 gap-y-8">
+          <div class="flex items-center flex-wrap justify-center xl:justify-normal">
+            <Image class="animate-cloudhover" src={ToolUmbracoCloud} alt="A purple cloud with an Umbraco icon in the middle of it"/>
+            <div class="ml-4 xl:mt-0 md:mt-3 xl:text-left text-center">
+              <h4 class="xl:text-2xl md:text-xl text-slate-50 font-bold">Umbraco Cloud</h4>
+              <p class="xl:text-xl md:text-lg text-slate-50">Perfekt sted at hoste Umbraco</p>
+            </div>
+          </div>
+          <div class="flex items-center flex-wrap justify-center xl:justify-normal">
+            <Image class="animate-cloudhover" src={ToolMsAzure} alt="A purple cloud with a Microsoft Azure icon in the middle of it"/>
+            <div class="ml-4 xl:mt-0 md:mt-3 xl:text-left text-center">
+              <h4 class="xl:text-2xl md:text-xl text-slate-50 font-bold">Microsoft Azure</h4>
+              <p class="xl:text-xl md:text-lg text-slate-50">Funktionsrig cloud native platform</p>
+            </div>
+          </div>
+        </div>
+        <div class="md:pt-11 pt-6 xl:w-1/2 md:w-full">
+          <h4 class="text-2xl text-slate-50 font-bold mb-4">Umbraco CMS</h4>
+          <p class="text-slate-50 text-xl mb-4">
+            Vores foretrukne værktøj til at bygge hjemmesider er Umbraco. 
+            Det er et CMS, der giver en fremragende oplevelse for både redaktører og udviklere, og det tilbyder mange muligheder for at udvide det til at opfylde specifikke behov
+          </p>
+          <p class="text-slate-50 text-xl">
+            Det er en software med et stærkt fællesskab omkring sig, som kontinuerligt arbejder på at forbedre det og elsker at bruge det. 
+            På grund af denne kontinuerlige forbedring og udvikling af produktet bruger vi det!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .mwl-background{
+    background-color: var(--mwl-purple);
+  }
+</style>
