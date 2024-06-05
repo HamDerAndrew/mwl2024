@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.2.2",
     "gsap": "^3.12.5",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@iconify-json/arcticons": "^1.1.91",
+    "@iconify-json/emojione-v1": "^1.1.10",
     "@iconify-json/mdi": "^1.1.64",
     "@iconify-json/simple-icons": "^1.1.89",
     "@iconify/tailwind": "^0.1.4"
