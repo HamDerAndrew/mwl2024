@@ -145,7 +145,7 @@ button:hover {
 		const errorMsg = document.getElementById("submit-error")
 		const loader = document.getElementById("loading-container")
 		// the double contact check is temporary. In prod there is a trailing / and that is not present in dev
-		const validPaths = ["", "dk", "dk/contact/", "dk/contact", "contact", "contact/"];
+		const validPaths = ["", "dk", "dk/", "dk/contact/", "dk/contact", "contact", "contact/"];
 
 		if(validPaths.includes(currentPath)) {
 			const handleSubmit = (e) => {
