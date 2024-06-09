@@ -34,10 +34,10 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
     <!--Mobile Nav -->
     <div id="mobile-nav" class="sm:hidden overflow-hidden fixed z-10 bg-slate-50 h-full top-0 left-0 transition-all">
       <ul class="p-8 text-xl">
-        <li class="mb-4"><a href=`${lang === "dk" ? homeURL : "/"}` class=`${currentPath === "" ? "active" : ""}`>{t('nav.home')}</a></li>
-        <li class="mb-4"><a href=`${lang === "dk" ? servicesURL : "/services/"}` class=`${currentPath === "/services/" ? "active" : ""}`>Services</a></li>
-        <li class="mb-4"><a href=`${lang === "dk" ? aboutURL : "/about/"}` class=`${currentPath === "/about/" ? "active" : ""}`>{t('nav.about')}</a></li>
-        <li class="mb-4"><a href=`${lang === "dk" ? contactURL : "/contact/"}` class=`${currentPath === "/contact/" ? "active" : ""}`>{t('nav.contact')}</a></li>
+        <li class="mb-4"><a href=`${lang === "dk" ? homeURL : "/"}` class=`${currentPath === "/" || currentPath === "/dk/" ? "active" : ""}`>{t('nav.home')}</a></li>
+        <li class="mb-4"><a href=`${lang === "dk" ? servicesURL : "/services/"}` class=`${currentPath === "/services/" || currentPath === "/dk/services/" ? "active" : ""}`>Services</a></li>
+        <li class="mb-4"><a href=`${lang === "dk" ? aboutURL : "/about/"}` class=`${currentPath === "/about/" || currentPath === "/dk/about/" ? "active" : ""}`>{t('nav.about')}</a></li>
+        <li class="mb-4"><a href=`${lang === "dk" ? contactURL : "/contact/"}` class=`${currentPath === "/contact/" || currentPath === "/dk/contact/" ? "active" : ""}`>{t('nav.contact')}</a></li>
       </ul>
       <div class="inline-block relative align-top ml-3 pl-2 pr-2">
         <ul class=" bg-slate-50 flex">
