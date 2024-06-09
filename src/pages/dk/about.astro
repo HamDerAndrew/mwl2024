@@ -1,10 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const title: string = t("nav.about")
 ---
 
 <Layout title="MWL - Dit lokale webbureau">
-  <Hero page="about" />
+  <Hero page=`${title}` />
   <main transition:animate="slide" class="text-white container mx-auto py-20 sm:py-52 text-xl px-8">
     <p><span class="mwl-yellow">MWL</span> består af tre erfarne udviklere, Darek, Jakob og André.
       Vores rejse begyndte i hjertet af Umbraco HQ. 
