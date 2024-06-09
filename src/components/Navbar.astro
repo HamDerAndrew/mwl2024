@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
+const currentPath = pathname.slice(0); // remove the first "/"
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 interface Props {
@@ -22,17 +22,10 @@ const t = useTranslations(lang);
 const { imagePath, altText } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
-
-const aboutPath = () => {
-  if(currentPath === "/services/" || currentPath === "/dk/services/"){
-    return "active"
-  } else {
-    return ""
-  }
-}
 ---
 
 <nav class="bg-slate-50 py-6">
+  <div>{currentPath === "/services/" ? "yep" : "nope"}</div>
   <div class="flex justify-between container mx-auto px-8">
     <div class="w-32 self-center">
       <a href="/">
@@ -43,7 +36,7 @@ const aboutPath = () => {
     <div id="mobile-nav" class="sm:hidden overflow-hidden fixed z-10 bg-slate-50 h-full top-0 left-0 transition-all">
       <ul class="p-8 text-xl">
         <li class="mb-4"><a href=`${lang === "dk" ? homeURL : "/"}` class=`${currentPath === "" ? "active" : ""}`>{t('nav.home')}</a></li>
-        <li class="mb-4"><a href=`${lang === "dk" ? servicesURL : "/services/"}` class=`${aboutPath}`>Services</a></li>
+        <li class="mb-4"><a href=`${lang === "dk" ? servicesURL : "/services/"}` class=`${currentPath === "/services/" ? "active" : ""}`>Services</a></li>
         <li class="mb-4"><a href=`${lang === "dk" ? aboutURL : "/about/"}` class=`${currentPath === "/about/" ? "active" : ""}`>{t('nav.about')}</a></li>
         <li class="mb-4"><a href=`${lang === "dk" ? contactURL : "/contact/"}` class=`${currentPath === "/contact/" ? "active" : ""}`>{t('nav.contact')}</a></li>
       </ul>
@@ -56,10 +49,10 @@ const aboutPath = () => {
     </div>
     <!--Standard Nav -->
     <div class="self-center text-lg sm:block hidden">
-      <a href=`${lang === "dk" ? homeURL : "/"}` class=`mr-4 ${currentPath === "" ? "active" : ""}`>{t('nav.home')}</a>
-      <a href=`${lang === "dk" ? servicesURL : "/services/"}` class=`mr-4 ${currentPath === "services/" ? "active" : ""}`>Services</a>
-      <a href=`${lang === "dk" ? aboutURL : "/about/"}` class=`mr-4 ${currentPath === "about/" ? "active" : ""}`>{t('nav.about')}</a>
-      <a href=`${lang === "dk" ? contactURL : "/contact/"}` class=`${currentPath === "contact/" ? "active" : ""}`>{t('nav.contact')}</a>
+      <a href=`${lang === "dk" ? homeURL : "/"}` class=`mr-4 ${currentPath === "/" || currentPath === "/dk/" ? "active" : ""}`>{t('nav.home')}</a>
+      <a href=`${lang === "dk" ? servicesURL : "/services/"}` class=`mr-4 ${currentPath === "/services/" || currentPath === "/dk/services/" ? "active" : ""}`>Services</a>
+      <a href=`${lang === "dk" ? aboutURL : "/about/"}` class=`mr-4 ${currentPath === "/about/" || currentPath === "/dk/about/" ? "active" : ""}`>{t('nav.about')}</a>
+      <a href=`${lang === "dk" ? contactURL : "/contact/"}` class=`${currentPath === "/contact/" || currentPath === "/dk/contact/" ? "active" : ""}`>{t('nav.contact')}</a>
       <div class="dropdown inline-block relative align-top ml-3 pl-2 pr-2">
         <span class=`${lang === "dk" ? "icon-[emojione-v1--flag-for-denmark]" : "icon-[emojione-v1--flag-for-united-kingdom]"}` style="width: 28px; height: 28px;"></span>
         <ul class="invisible block absolute bg-slate-50 left-0 shadow-x">
