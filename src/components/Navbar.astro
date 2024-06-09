@@ -43,16 +43,16 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
     <!--Standard Nav -->
     <div class="self-center text-lg sm:block hidden">
       <a href=`${lang === "dk" ? homeURL : "/"}` class=`mr-4 ${currentPath === "" ? "active" : ""}`>Home</a>
-      <a href=`${lang === "dk" ? servicesURL : "/services"}` class=`mr-4 ${currentPath === "services/" ? "active" : ""}`>Services</a>
-      <a href=`${lang === "dk" ? aboutURL : "/about"}` class=`mr-4 ${currentPath === "about/" ? "active" : ""}`>About</a>
-      <a href=`${lang === "dk" ? contactURL : "/contact"}` class=`${currentPath === "contact/" ? "active" : ""}`>Contact</a>
-      <!-- <div class="dropdown inline-block relative align-top ml-3 pl-2 pr-2">
+      <a href=`${lang === "dk" ? servicesURL : "/services/"}` class=`mr-4 ${currentPath === "services/" ? "active" : ""}`>Services</a>
+      <a href=`${lang === "dk" ? aboutURL : "/about/"}` class=`mr-4 ${currentPath === "about/" ? "active" : ""}`>About</a>
+      <a href=`${lang === "dk" ? contactURL : "/contact/"}` class=`${currentPath === "contact/" ? "active" : ""}`>Contact</a>
+      <div class="dropdown inline-block relative align-top ml-3 pl-2 pr-2">
         <span class=`${lang === "dk" ? "icon-[emojione-v1--flag-for-denmark]" : "icon-[emojione-v1--flag-for-united-kingdom]"}` style="width: 28px; height: 28px;"></span>
         <ul class="invisible block absolute bg-slate-50 left-0 shadow-x">
           <li class="p-2"><a href="/"><span class="icon-[emojione-v1--flag-for-united-kingdom]" style="width: 28px; height: 28px;"></span></a></li>
-          <li class="p-2"><a href="/dk"><span class="icon-[emojione-v1--flag-for-denmark]" style="width: 28px; height: 28px;"></span></a></li>
+          <li class="p-2"><a href="/dk/"><span class="icon-[emojione-v1--flag-for-denmark]" style="width: 28px; height: 28px;"></span></a></li>
         </ul>
-      </div> -->
+      </div>
     </div>
     <div id="nav-toggle" class="flex rounded transition-all md:hidden">
       <span class="icon-[mdi--menu] text-4xl"></span>
