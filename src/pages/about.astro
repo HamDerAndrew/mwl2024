@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import darekImg from "../assets/darek.jfif";
+import andreImg from "../assets/andre.jpg";
+import jakobImg from "../assets/jakob.png"
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -41,11 +44,70 @@ const title: string = t("nav.about")
       Join us as we navigate the ever-evolving landscape of web development, fueled by our deep-rooted Umbraco heritage and Azure expertise. 
       Whether you're envisioning a dynamic website, a powerful web application, or a custom-tailored solution, we have the skills and dedication to bring your ideas to life.
     </p>
+    <div class="cards-container flex flex-col md:flex-row md:justify-between md:gap-7 gap-y-7 mt-11">
+      <figure class="mwl-purple-bg rounded-xl p-8 w-96">
+        <img class="lg:w-48 lg:h-48 rounded-full mx-auto" src={andreImg.src} alt="Picture of André Larsen">
+        <div class="pt-6 space-y-4">
+          <blockquote>
+            <p class="text-lg font-medium">
+            andre@mwl.nu
+            </p>
+          </blockquote>
+          <figcaption class="font-medium">
+            <div class="">
+              André Larsen
+            </div>
+            <div class="mwl-yellow">
+              Frontend Developer
+            </div>
+          </figcaption>
+        </div>
+      </figure>
+      <figure class="mwl-purple-bg rounded-xl p-8 w-96">
+        <img class="lg:w-48 lg:h-48 rounded-full mx-auto" src={darekImg} alt="Picture of Darek Szatkowski">
+        <div class="pt-6 space-y-4">
+          <blockquote>
+            <p class="text-lg font-medium">
+            darek@mwl.nu
+            </p>
+          </blockquote>
+          <figcaption class="font-medium">
+            <div class="">
+              Darek Szatkowski
+            </div>
+            <div class="mwl-yellow">
+              DevOps Engineer & Infrastructure Architect
+            </div>
+          </figcaption>
+        </div>
+      </figure>
+      <figure class="mwl-purple-bg rounded-xl p-8 w-96">
+        <img class="lg:w-48 lg:h-48 rounded-full mx-auto" src={jakobImg.src} alt="Picture of Jakob Nawroki">
+        <div class="pt-6 space-y-4">
+          <blockquote>
+            <p class="text-lg font-medium">
+            jakob@mwl.nu
+            </p>
+          </blockquote>
+          <figcaption class="font-medium">
+            <div class="">
+              Jakob Nawrocki
+            </div>
+            <div class="mwl-yellow">
+              Backend Developer
+            </div>
+          </figcaption>
+        </div>
+      </figure>
+    </div>
   </main>
 </Layout>
 
 <style>
   .mwl-yellow {
     color: var(--mwl-yellow-bright);
+  }
+  .mwl-purple-bg {
+    background-color: var(--mwl-purple);
   }
 </style>
